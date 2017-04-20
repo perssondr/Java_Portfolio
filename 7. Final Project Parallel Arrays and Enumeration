@@ -1,0 +1,167 @@
+//<FinalProject> 
+//David Persson
+//CSIS 212-<D02>
+//G.P.A. display program
+
+//Extra citation:
+
+//error dialogue message learned from:
+//http://www.java2s.com/Code/Java/Swing-JFC/DisplayerrormessagedialogwithJOptionPaneERRORMESSAGE.htm
+//String format for error message learned from:
+//http://stackoverflow.com/questions/14762716/java-optionpane-showmessagedialog-output-formatting-for-decimal
+
+import javax.swing.JOptionPane;
+
+public class Assignment1 
+{
+	public static void main(String[] args)
+	{
+		
+		System.out.println("David Persson : Final Project\n");
+		
+		//setting up the arrays
+		double[] ID = new double[10];//student ID array
+		String[] FN = new String[10];//first name array
+		double[] GPA = new double[10];//last name array
+		
+		//assigning values to each array
+		ID[0] = 1000;
+		ID[1] = 1111;
+		ID[2] = 2222;
+		ID[3] = 3333;
+		ID[4] = 4444;
+		ID[5] = 5555;
+		ID[6] = 6666;
+		ID[7] = 7777;
+		ID[8] = 8888;
+		ID[9] = 9999;
+		
+		FN[0] = "Dave";
+		FN[1] = "Bob";
+		FN[2] = "Sally";
+		FN[3] = "Cedric";
+		FN[4] = "Mary";
+		FN[5] = "Louis";
+		FN[6] = "Erin";
+		FN[7] = "Dakota";
+		FN[8] = "Tim";
+		FN[9] = "Gustav";
+		
+		GPA[0] = 4.0;
+		GPA[1] = 3.7;
+		GPA[2] = 2.2;
+		GPA[3] = 1.9;
+		GPA[4] = 3.9;
+		GPA[5] = 3.0;
+		GPA[6] = 3.8;
+		GPA[7] = 4.0;
+		GPA[8] = 2.6;
+		GPA[9] = 3.1;
+		
+		boolean done = false;
+		
+		do//check to see if the user entered a valid number
+		{
+			//prompt user to enter student ID number
+			String stringStudentID = JOptionPane.showInputDialog("What is the four digit ID# "
+					+ "of the student" + "you would like to look up?");
+		
+			//convert user entered String into a double
+			double doubleStudentID = Integer.parseInt(stringStudentID);
+			
+			//cross reference ID# with "database"
+			if (doubleStudentID == ID[0])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[0], GPA[0]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[1])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[1], GPA[1]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[2])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[2], GPA[2]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[3])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[3], GPA[3]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[4])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[4], GPA[4]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[5])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[5], GPA[5]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[6])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[6], GPA[6]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[7])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[7], GPA[7]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[8])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[8], GPA[8]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else if (doubleStudentID == ID[9])
+			{
+				JOptionPane.showMessageDialog(null, String.format("Name:    %s\n\nG.P.A:    %.1f", 
+						FN[9], GPA[9]), "information", JOptionPane.INFORMATION_MESSAGE);
+				done = true;
+			}
+			else//if ID# did not match database, print error message and try again
+			{
+				JOptionPane.showMessageDialog(null, String.format(" %.0f is not a valid ID#.\n "
+						+ "Please enter a valid four digit ID#.", doubleStudentID), 
+			    		"Error", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		while (done == false);
+			
+	}//end main
+}//end class
+
+
+
+
+
+
+//check the user entered ID to see if it matches "database"
+/*for (int i = 0; i < 10; i++)
+{
+	if (doubleStudentID == ID[i])//if the ID# is valid, show the name and G.P.A.
+	{
+		System.out.printf("ID #\t\t" + "First\t\t" + "G.P.A.\n\n\n");
+		System.out.printf("%.0f\t\t%s\t\t%.1f\n\n", ID[i], FN[i], GPA[i]);
+		done = true;
+	}
+	else//show error message and try again
+	{
+		i=10;
+	}
+	if (done == false)
+		JOptionPane.showMessageDialog(panel, "Could not open file", 
+	    		"Error", JOptionPane.ERROR_MESSAGE);
+}//end for loop*/
+
