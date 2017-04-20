@@ -1,0 +1,53 @@
+//<Assignment6> 
+//David Persson
+//CSIS 212-<D02>
+//Exercise 7.13 JHTP (Date Class):
+
+public class Date 
+{
+	private static int month; //instance variable
+	private static int day; //instance variable
+	private static int year; //instance variable
+	
+	//constructor initializes variables with parameter names
+	public Date(int month, int day, int year)
+	{
+		this.month = month;
+		this.day = day;
+		this.year = year;	
+	}
+	
+	//providing set methods for each variable
+	public void setMonth(int month)	//method to set the variable month
+	{
+		this.month = month;
+	}
+	
+	public void setDay(int day)//method to set the variable day
+	{
+		this.day = day;
+	}
+	
+	public void setYear(int year)//method to set the variable month
+	{
+		this.year = year;
+	}
+	
+	//providing get methods for each variable
+	public static int getMonth()//get method for month
+	{
+		return month;
+	}
+	
+	public static int getDay()//get method for day
+	{
+		return day;
+	}
+	
+	public static int getYear()//get method for year
+	{
+		return year;
+	}
+	
+}//end class Date
+
