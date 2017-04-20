@@ -1,0 +1,33 @@
+//<Assignment4> -- that prompts the user for the radius of a circle
+//and uses a method called circleArea to calculate the area of the circle.
+//David Persson
+//CSIS 212-<D02>
+import java.util.Scanner;// program uses class scanner
+
+public class Exercise_5_20 
+{
+	public static void main(String[]args)
+	{
+		System.out.println("David Persson – Assignment 4\n");
+		
+		//create Scanner for input from command window
+		Scanner input = new Scanner(System.in);
+		
+		double radius;
+		
+		System.out.print("Enter the Radius of your circle:");
+		radius = input.nextInt();
+		
+		//calls on the method to determine the area of the circle
+		double area = circleArea(radius);
+				
+		//displays the area of the circle
+		System.out.println("The Area of the circle is:  " + area);
+		
+	}
+	
+	public static double circleArea(double radius)//method calculates the area of a circle using Pi times radius squared
+	{
+		return Math.PI * Math.pow(radius, 2);
+	}
+}
