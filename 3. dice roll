@@ -1,0 +1,60 @@
+//<Assignment5> -- simulates the rolling of two dice
+//and tallies the number of times each possible sum appears.
+//David Persson
+//CSIS 212-<D02>
+import java.security.SecureRandom;
+
+public class Exercise_6_17 
+{
+	public static void main(String[] args)
+	{
+		System.out.println("David Persson – Assignment 5\n");
+		
+		int[] frequency = new int[13]; //array of frequency counters
+		
+		for (int roll = 1; roll <= 36000; roll++)
+		{
+			SecureRandom randomNumbers = new SecureRandom();
+			
+			//pick random die values
+			int die1 = 1 + randomNumbers.nextInt(6); //first die roll
+			int die2 = 1 + randomNumbers.nextInt(6); //second die roll
+			
+			int sum = die1 + die2;//sum of die values
+			
+			try
+			{
+				++frequency[sum];
+			}
+			catch (ArrayIndexOutOfBoundsException e)
+			{
+				System.out.println(e);//invokes toString method
+				System.out.printf("     rolls[%d] = %d%n%n", sum);
+			}
+		}//end roll loop
+		System.out.printf("%s\t%s%n", "Roll", "Frequency");
+		
+		//output each roll
+		for (int rolled = 1; rolled <=36000; rolled++)
+		{
+			System.out.printf("%2d\t%d%n", rolled, frequency[rolled]);
+		}
+	}
+	
+	public static int rollDice()
+	{
+		SecureRandom randomNumbers = new SecureRandom();
+		
+		//pick random die values
+		int die1 = 1 + randomNumbers.nextInt(6); //first die roll
+		int die2 = 1 + randomNumbers.nextInt(6); //second die roll
+		
+		int sum = die1 + die2;//sum of die values
+		
+		//diplay results of this roll
+		System.out.printf("%d%n", sum);
+		
+		return sum;
+	}
+	
+}//end class roll die
