@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+//<Assignment6> 
+//David Persson
+//CSIS 212-<D02>
+//Exercise 7.13 JHTP (Date Class):
+
+public class DateTest 
+{
+	public static void main(String[] args)
+	{
+		System.out.println("David Persson – Assignment 6\n");
+		
+		//create date objects
+		Date date1 = new Date(12, 5, 2016);
+		
+		displayDate();
+	}
+
+	//method to display the date
+	static void displayDate()
+	{
+		//displays the date
+		System.out.printf("The due date for this assignment is %s/%s/%s%n", 
+				Date.getMonth(), Date.getDay(), Date.getYear());
+	}
+	
+}
