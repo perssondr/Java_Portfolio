@@ -1,0 +1,44 @@
+//<Assignment4> -- checks if the second number is a multiple of the first
+//David Persson
+//CSIS 212-<D02>
+//information taken from the class video posted on blackboard "Presentation: Methods"
+
+import java.util.Scanner;// program uses class scanner
+
+public class Exercise_5_16 
+{
+	public static void main(String[]args)
+	{
+		System.out.println("David Persson – Assignment 4\n");
+		
+		//create Scanner for input from command window
+		Scanner input = new Scanner(System.in);
+		
+		int first; //the first number
+		int second; // the second number
+		
+		System.out.print("Enter first number(0 to exit):");
+		first = input.nextInt();
+		
+		//use 0 as the sentinel value since we cannot divide by zero
+		while (first != 0)
+		{
+			System.out.print("Enter second number:");
+			second = input.nextInt();
+			
+			if (multiple(first, second))
+				System.out.printf("%d is a multiple of %d\n\n", second, first);
+			else
+				System.out.printf("%d is not a multiple of %d\n\n", second, first);
+			
+			System.out.print("Enter first number(0 to exit):");
+			first = input.nextInt();
+		}//end while loop
+	}//end main
+	
+	//determine if the first int is a multiple of the second
+	public static boolean multiple( int firstnumber, int secondnumber)
+	{
+		return secondnumber % firstnumber == 0;
+	}//end method multiple
+}//end class
