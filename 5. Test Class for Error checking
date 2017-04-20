@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+//<Assignment6> 
+//David Persson
+//CSIS 212-<D02>
+//Exercise 8.4 JHTP (Rectangle Class): 
+
+public class TestRectangle 
+{
+	public static void main(String[] args)
+	{
+		//create Scanner for input from command window
+		Scanner input = new Scanner(System.in);
+				
+		System.out.println("David Persson – Assignment 6\n");
+		
+		int option;
+		System.out.print("To set the length and width"
+				+ " of your rectangle,\n"
+				+ "type any number. "
+				+ "To quit, type 1. \n"
+				+ "Select your choice: ");
+		option = input.nextInt();
+		
+		if (option == 1)
+		{
+			System.out.println("Goodbye!");
+		}
+		else
+		{
+			runProgram();
+		}
+		
+	}
+	
+	static void runProgram()
+	{
+		//create Scanner for input from command window
+		Scanner input = new Scanner(System.in);
+				
+		double recLength; //create variables for user to enter... 
+		double recWidth; //and to error check
+		
+		System.out.print("Enter the length of your rectangle: \n"//message to user
+				+ "(Must be a number between 1-20) \n");//to input the length
+		recLength = input.nextInt();//record length entered
+		//error check to make sure it is with range
+		try
+		{
+			Rectangle.setRectangle(recLength, 1);//check the value entered
+		}
+		catch (IllegalArgumentException e)
+		{
+			System.out.printf("Exception: %s%n%n", e.getMessage());//if it's not in range, display error
+			runProgram();//and send user back to the beginning
+		}
+		//another input from user, this time the width
+		System.out.print("Enter the width of your rectangle: \n"
+				+ "(Must be a number between 1-20) \n");
+		recWidth = input.nextInt();
+		//another error check
+		try
+		{
+			Rectangle.setRectangle(recLength, recWidth);//all values out of range
+		}
+		catch (IllegalArgumentException e)
+		{
+			System.out.printf("Exception: %s%n%n", e.getMessage());
+			runProgram();
+		}
+		//if the numbers passed the error check, then continue with finding the perimeter and area below
+		Rectangle rectangle1 = new Rectangle();
+		
+		//run the methods
+		displayRectangle();
+		
+		displayPerimeter();
+		
+		displayArea();
+	}
+
+	//method to display the Rectangle
+	static void displayRectangle()
+	{
+		//displays the rectangle's length and width
+		System.out.printf("The length of the rectangle is %s"
+				+ " and the width of the rectangle is %s %n", 
+				Rectangle.getLength(), Rectangle.getWidth());
+	}
+	
+	static void displayPerimeter()
+	{
+		//displays the perimeter
+		System.out.printf("The Perimeter of the rectangle is %s%n", 
+				Rectangle.getPerimeter());
+	}
+	
+	static void displayArea()
+	{
+		//displays the area
+		System.out.printf("The Area of the rectangle is %s%n", 
+				Rectangle.getArea());
+	}
+}
