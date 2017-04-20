@@ -1,0 +1,39 @@
+//<Assignment5> 
+//David Persson
+//CSIS 212-<D02>
+
+public class Exercise_6_14 
+{
+	public static double product(double...numbers)
+	{
+		double total = 1;
+		
+		//calculate total using the enhanced for statement
+		for (double d : numbers)
+			total *= d;
+		
+		return total;
+		
+	}
+	
+	public static void main(String[] args)
+	{
+		double d1 = 10.0;
+		double d2 = 20.0;
+		double d3 = 30.0;
+		double d4 = 40.0;
+		
+		System.out.printf("d1 = %.1f%nd2 = %.1f%nd3 = %.1f%nd4 = %.1f%n%n", d1, d2, d3, d4);
+		
+		System.out.printf("Product of d1 and d2 is %.1f%n", product(d1, d2)  );
+		System.out.printf("Product of d1, d2 and d3 is %.1f%n", product(d1, d2, d3)  );
+		System.out.printf("Product of d1, d2, d3 and d4 is %.1f%n", product(d1, d2, d3, d4)  );
+		
+		
+		
+		
+				
+		
+	}
+}
+
