@@ -1,0 +1,29 @@
+//<Assignment3> -- Calculates the product of the odd integers from 1 to 15
+//David Persson
+//CSIS 212-<D02>
+
+public class Exercise_4_12  
+{
+	public static void main(String[] args)
+	{
+		System.out.println("David Persson – Assignment 3\n");
+		//initialization phase
+		int number1 = 0;
+		int product = 1;
+		
+		//processing phase
+		for (int i = 1; i <= 15; i++)//loop 15 times
+		{
+			number1++;//counts the next number			
+			
+			if (number1 % 2 != 0) //checks to see if the number is odd by checking for a remainder
+			{				
+				product = number1 * product; //if the number was odd, multiples with the previous product
+			}
+			else //if the number was even, moves on to the next number
+				;
+		}
+		//displays the product
+		System.out.printf("The product of all the odd integers between 1 and 15 is: %n%d", product);
+	}
+}
