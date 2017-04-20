@@ -1,0 +1,70 @@
+//<Assignment6> 
+//David Persson
+//CSIS 212-<D02>
+//Exercise 8.4 JHTP (Rectangle Class): 
+
+public class Rectangle 
+{
+	private static double length = 1; //instance variable
+	private static double width = 1; //instance variable
+	private static double perimeter = 1;//instance variable
+	private static double area = 1;//instance variable
+	
+	//constructor initializes variables with parameter names
+	public static void setRectangle(double length, double width)
+	{
+		//error check to make sure the user entered a number within range
+		if (length <= 0 || length > 20 || width <= 0 || width > 20)
+		{
+			throw new IllegalArgumentException//error message if the user did not enter 
+			("Length and/or Width was out of range");//a number within range	
+		}
+		
+		Rectangle.length = length;//record the length
+		Rectangle.width = width;//record the width
+		Rectangle.perimeter = 2 * (Rectangle.length + Rectangle.width);//calculate the perimeter
+		Rectangle.area = Rectangle.length * Rectangle.width;//calculate the area
+	}
+	
+	//providing set methods for each variable
+	public void setLength(double length)	//method to set the variable month
+	{
+		this.length = length;
+	}
+		
+	public void setWidth(double width)//method to set the variable day
+	{
+		this.width = width;
+	}
+	
+	public void setPerimeter(double perimeter)//method to set the variable perimeter
+	{
+		this.perimeter = perimeter;
+	}
+	
+	public void setArea(double area)//method to set the variable area
+	{
+		this.area = area;
+	}
+	
+	//providing get methods for each variable
+	public static double getLength()//get method for month
+	{
+		return length;
+	}
+		
+	public static double getWidth()//get method for day
+	{
+		return width;
+	}
+	
+	public static double getPerimeter()//get method for perimeter
+	{
+		return perimeter;
+	}
+	 
+	public static double getArea()//get method for area
+	{
+		return area;
+	}	
+}//end class Rectangle
