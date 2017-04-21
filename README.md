@@ -10,6 +10,8 @@ CSIS 212
 Also created an application that contains an enumeration (enum) that represents the days of the week.  Display a list of the days, then prompt the user for a day. Display business hours for the chosen day.  Create your own business hours stored in an array; however, every day of the week should have different hours.  
 
 CSIS 312
+
+
 8.	Program that Represents and Increments Time Internally: Modified the Time2 class so that time is represented internally as seconds.  Using my modified Time2 class, I added a tick method that increments time stored in the Time2 object by one second. I also provide an incrementMinute method to increment the minute by one and an incrementHour method to increment the hour by one. I tested for cases where incrementing the second, minute, or hour moves your time into the next day (i.e., 11:59:59 PM to 12:00:00 AM).
 9.	Superclass, Subclass, and Invoking Methods Demonstration: Created a new superclass that contains instance variables and methods and a constructor. Rewrote classes as subclasses of the superclass. Invoked the superclass’s constructor and  toString method. 
 10.	Additional Demonstration of Polymorphism, Superclasses, and Subclasses: Added a new subclass to a previous superclass, provided a concrete implementation of method in that class, and created an array variables to store references to objects of each concrete class in the new class hierarchy.
