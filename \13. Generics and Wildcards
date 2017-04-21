@@ -1,0 +1,40 @@
+//David Persson
+//CSIS 312-<B02>
+//<Assignment7> 
+public class Pair<F, S> 
+{
+	public F first;
+	public S second;
+
+	public Pair(F first, S second)//constructor
+	{
+		this.first = first;
+		this.second = second;
+	}
+
+	//set methods
+	public void setF()
+	{
+		this.first = first;
+	}
+	
+	public void setS()
+	{
+		this.second = second;
+	}
+	
+	//get methods
+		public F getF()
+		{
+			//prints the type(Integer/String/Character/Boolean/Long/Double etc.) of first
+			System.out.printf("F = %s passed: ", first.getClass().getSimpleName());
+			return first;
+		}
+		
+		public S getS()
+		{
+			//prints the type(Integer/String/Character/Boolean/Long/Double etc.) of second
+			System.out.printf("S = %s passed: ", second.getClass().getSimpleName());
+			return second;
+		}
+}
