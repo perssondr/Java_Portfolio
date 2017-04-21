@@ -1,0 +1,28 @@
+//David Persson
+//CSIS 312-<B02>
+//<Assignment4> 
+
+public class Sentence 
+{
+	public static StringBuilder getSentence()
+	{
+		
+		StringBuilder sentence = new StringBuilder();	//creates the StringBuilder sentence
+		
+		sentence.append(Word.getArticle());		//Gets the first article of the sentence
+		char c = sentence.charAt(0);			//gets the first letter of the first article
+		sentence.setCharAt(0, Character.toUpperCase(c));//capitalizes the first letter
+		sentence.append(" ");				//space
+		sentence.append(Word.getNoun());		//gets the first noun
+		sentence.append(" ");				//space
+		sentence.append(Word.getVerb());		//gets the first verb
+		sentence.append(" ");				//space
+		sentence.append(Word.getPreposition());		//gets the first preposition
+		sentence.append(" ");				//space
+		sentence.append(Word.getArticle());		//gets the second article
+		sentence.append(" ");				//space
+		sentence.append(Word.getNoun());		//gets the second noun
+		
+		return sentence;				//returns the sentence
+	}
+}
