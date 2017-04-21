@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+
+//David Persson
+//CSIS 312-<B02>
+//<Assignment8> 
+//Modified from Fig. 20.7: Stack.java from the textbook, pg. 842.
+public class Stack<T> 
+{
+	public final ArrayList<T> elements; //ArrayList stores stack elements
+	
+	//no argument constructor creates a stack of the default size
+	public Stack()
+	{
+		this(10); //default stack size
+	}
+	
+	//constructor creates a stack of the specified number of elements
+	public Stack(int capacity)
+	{
+		int initCapacity = capacity > 0 ? capacity : 10; //validate
+		elements = new ArrayList<T>(initCapacity); //create ArrayList
+	}
+	
+	//push method
+	public void push(T pushValue)
+	{
+		elements.add(pushValue); //place pushValue on Stack
+	}
+	
+	//pop method
+	public T pop()
+	{
+		return elements.remove(elements.size() - 1);
+	}
+
+	//isEmpty method 
+	public boolean isEmpty()
+	{
+		
+		if (elements.isEmpty())//if stack is empty
+		return true;
+		else
+		return false;
+	}
+	
+	//size method
+	public int size(Stack<?> stack)
+	{
+		int total = 0; //initialize total
+		
+		//calculate sum
+		for (T element : elements)
+			total ++;
+		return total;
+		
+	}
+}//end class Stack<T>
