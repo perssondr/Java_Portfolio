@@ -1,0 +1,59 @@
+//David Persson
+//CSIS 312-<B02>
+//<Assignment4> 
+
+import java.security.SecureRandom;
+
+public class Word 
+{
+
+	//randomNumbers object will produce secure random numbers according to the textbook
+	static SecureRandom randomNumbers = new SecureRandom();
+	
+	//string arrays for the words
+	static String[] article = { "the", "a", "one", "some", "any" };
+	static String[] noun = { "boy", "girl", "dog", "town", "car" };
+	static String[] verb = { "drove", "jumped", "ran", "walked", "skipped" };
+	static String[] preposition = { "to", "from", "over", "under", "on" };
+	
+	
+	// constructor
+	   public Word(String[] article, String[] noun, 
+	      String[] verb, String[] preposition)
+	   {
+		  this.article = article;                                    
+	      this.noun = noun;                                    
+	      this.verb = verb;
+	      this.preposition = preposition;
+	   } 
+	
+	   
+	// return article
+	   public static String getArticle()
+	   {   
+		   int randomValue = randomNumbers.nextInt(5);//picks a random word to return
+		   return article[randomValue];
+	   } 
+
+	// return noun
+	   public static String getNoun()
+	   {
+		   int randomValue = randomNumbers.nextInt(5);//picks a random word to return
+		   return noun[randomValue];
+	   } 
+	
+	// return verb
+	   public static String getVerb()
+	   {
+		   int randomValue = randomNumbers.nextInt(5);//picks a random word to return
+		   return verb[randomValue];
+	   } 
+	   
+		
+	// return preposition
+	   public static String getPreposition()
+	   {
+		   int randomValue = randomNumbers.nextInt(5);//picks a random word to return
+		   return preposition[randomValue];
+	   } 
+}
