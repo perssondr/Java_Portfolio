@@ -1,0 +1,71 @@
+//creates a list of 25 random integers, sorts them, adds their total, and calculates the floating point average
+import java.util.LinkedList;
+import java.util.List;
+import java.security.SecureRandom;
+import java.util.Arrays;
+import java.util.Collections;
+
+//David Persson
+//CSIS 312-<B02>
+//<Assignment5.1> 
+
+public class Assignment_5_1 
+{
+	public static void main(String[] args)
+	{
+	System.out.println("David Persson : Assignment 5.1\n");
+		
+	//randomize object will produce secure random numbers according to the textbook
+	SecureRandom randomize = new SecureRandom();
+		
+	//add first random number to the list
+	int random = randomize.nextInt(101);
+	Integer[] randomNumbers = {random};
+	
+	//creates a LinkedList, adds 24 more random integers to the list, and converts to an array
+	List<Integer> list1 = new LinkedList<>(Arrays.asList(randomNumbers));
+	
+	for (int j = 1; j <= 24; j++)						//loop 24 more times (first number already added to array)
+		{
+		int randomValue = randomize.nextInt(101);		//picks a random integer to return
+		list1.add(randomValue);							//add a random number to the list
+		}	
+	
+	//get LinkedList elements as an array
+	randomNumbers = list1.toArray(new Integer[list1.size()]);
+	
+	//print the unsorted elements
+	System.out.println("Twenty-five random numbers as an array from 0-100: ");
+	System.out.println(list1);
+	System.out.println();//new line
+	
+	//sort the 25 numbers
+	Collections.sort(list1);
+	
+	//print the sorted elements
+	System.out.println("Sorted numbers: ");
+	System.out.println(list1);
+	System.out.println();//new line
+	
+	//add all the elements (pg. 217 of the textbook)
+	System.out.println("Adding all the elements: ");
+	float sum = 0;
+	
+	for (int counter = 0; counter < randomNumbers.length; counter++)
+		{
+		System.out.printf("%f + %d = ", sum, randomNumbers[counter]);//show the math
+		sum += randomNumbers[counter]; //add the previous number to the next number
+		System.out.println(sum);//show the sum of the two numbers
+		}
+	System.out.println();//new line
+	System.out.println("The sum of all the elements is: ");
+	System.out.println(sum);
+	System.out.println();//new line
+	
+	//calculate the floating point average
+	float average = sum/25;
+	System.out.printf("The floating point average of %f divided by 25 elements equals: ", sum);
+	System.out.println(average);
+	
+	}
+}
