@@ -1,0 +1,78 @@
+// A new type of employee added to the payroll system that 
+//"calculates the employee’s earnings by multiplying the number of pieces produced by the wage per piece"
+
+//David Persson
+//CSIS 312-<B02>
+//<Assignment3> 
+public class PieceWorker extends Employee
+{
+
+	private double wage; // wage per piece
+	private double pieces; // # of pieces sold
+	
+	   // constructor
+	   public PieceWorker(String firstName, String lastName,
+	      String socialSecurityNumber, double wage, double pieces)
+	   {
+	      super(firstName, lastName, socialSecurityNumber);
+
+	      if (wage < 0.0) // validate wage
+	         throw new IllegalArgumentException(
+	            "Wage must be >= 0.0");
+
+	      if (pieces < 0.0) // validate pieces
+	         throw new IllegalArgumentException(
+	            "Pieces must be >= 0.0");
+
+	      this.wage = wage;
+	      this.pieces = pieces;
+	   } 
+	   
+	   // set wage
+	   public void setWage(double wage)
+	   {
+	      if (wage < 0.0) // validate wage
+	         throw new IllegalArgumentException(
+	            "Wage must be >= 0.0");
+
+	      this.wage = wage;
+	   } 
+
+	   // return wage
+	   public double getWage()
+	   {
+	      return wage;
+	   } 
+	   
+	   // set number of pieces
+	   public void setPieces(double pieces)
+	   {
+		   if (pieces < 0.0) // validate pieces
+		         throw new IllegalArgumentException(
+		            "Pieces must be >= 0.0");
+
+	      this.pieces = pieces;
+	   } 
+
+	   // return hours worked
+	   public double getPieces()
+	   {
+	      return pieces;
+	   } 
+	   
+	   // calculate earnings; override abstract method earnings in Employee
+	   @Override                                                           
+	   public double earnings()                                            
+	   {                                                                                                                             
+	         return getPieces() * getWage();
+	   }                                          
+
+	   // return String representation of HourlyEmployee object              
+	   @Override                                                             
+	   public String toString()                                              
+	   {                                                                     
+	      return String.format("Piece Worker: %s%n%s: $%,.2f; %s: %,.2f",
+	         super.toString(), "Wage per piece sold", getWage(),                     
+	         "Number of pieces sold", getPieces());                                   
+	   }
+}
