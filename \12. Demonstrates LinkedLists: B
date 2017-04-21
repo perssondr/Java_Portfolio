@@ -1,0 +1,39 @@
+//Creates a LinkedList of 10 characters, then creates a second list of the same characters in reverse order.
+//Prints both lists
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
+//David Persson
+//CSIS 312-<B02>
+//<Assignment5.2> 
+public class Assignment_5_2 
+{
+	public static void main(String[] args)
+	{
+		System.out.println("David Persson : Assignment 5.2\n");
+		//creating 10 characters and adding them to the list
+		Character[] characters = {'a', 'b','c','d','e','f','g','h','i','j'};
+		List<Character> list = new LinkedList<>();
+		
+		for (Character character : characters)
+			list.add(character);
+		
+		System.out.println("10 character list: ");
+		System.out.println(list);
+		System.out.println();//new line
+		
+		//second LinkedList object containing a copy of the first list, but in reverse order.
+		List<Character> list2 = new LinkedList<>();
+		
+		ListIterator<Character> iterator = list.listIterator(list.size());
+	
+		//add characters from first list to the second list in reverse order
+		while (iterator.hasPrevious())
+			list2.add(iterator.previous());
+		
+		System.out.printf("%nSecond list of same characters in reversed order:%n");
+		System.out.println(list2);
+		
+	}
+}
