@@ -1,0 +1,47 @@
+//<FinalProject> 
+//David Persson
+//CSIS 212-<D02>
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class Part2Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println("David Persson : Final Project\n");
+		
+		System.out.println("All Days of the Week:\n");
+		
+		Scanner input = new Scanner(System.in);
+		//print all days of the week and their values
+		for (Part2 days : Part2.values())
+			System.out.printf("%-15s%d%n", days, days.getDay());
+		
+		boolean done = false;
+		
+		do
+		{
+			//prompt user for day
+			System.out.print("\nEnter the day of the week you would like to view: "
+					+ "(Enter the number between 1-7) \n");
+			int weekDay = input.nextInt();//record day entered
+			
+			//print out business hours for work day
+			for (Part2 hours : Part2.values())
+			{			
+			if (weekDay == hours.getDay())
+				{
+				System.out.printf("%-15s%s%n", hours, hours.getHours());
+				done = true;
+				}
+			}
+			if (done == false)//print error message if the wrong number is entered
+				JOptionPane.showMessageDialog(null, String.format(" You did not enter the number of "
+						+ "the day properly: (1-7).\n"
+						+ "Please try again.","Error", JOptionPane.ERROR_MESSAGE));
+		}
+		while (done == false);//if an invalid number is entered, prompt user again.
+	}//end main	
+}//end class
