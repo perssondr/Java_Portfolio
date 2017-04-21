@@ -1,0 +1,38 @@
+//<FinalProject> 
+//David Persson
+//CSIS 212-<D02>
+
+public enum Part2 
+{
+		//declare constants of enum type
+		MONDAY(1, "7-3 P.M."),
+		TUESDAY(2, "8-4 P.M."),
+		WEDNESDAY(3, "9-5 P.M."),
+		THURSDAY(4, "10-6 P.M."),
+		FRIDAY(5, "11-7 P.M."),
+		SATURDAY(6, "12-8 P.M."),
+		SUNDAY(7, "Closed");
+		
+		//instance fields
+		private final int day;//day of the week
+		private final String hours; //copyright year
+		
+		//enum constructor
+		Part2(int day, String hours)
+		{
+			this.day = day;
+			this.hours = hours;
+		}
+		
+		//accessor for field title
+		public int getDay()
+		{
+			return day;
+		}
+		
+		//accessor for field copyright year
+		public String getHours()
+		{
+			return hours;
+		}
+}//end enum Part2
