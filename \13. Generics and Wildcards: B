@@ -1,0 +1,48 @@
+//David Persson
+//CSIS 312-<B02>
+//<Assignment7> 
+public class PairTest 
+{
+	public static void main(String[] args)
+	{
+		System.out.println("David Persson : Assignment 7\n");
+
+		Pair<Integer, String> p1 = new Pair<>(5, "cool");//pair type 1 of type int and string
+		Pair<String, Integer> p2 = new Pair<>("nice", 7);//pair type 2 of type string and int
+		
+		//two additional pair types demonstrating how any value can be passed into this generic class
+		//using wildcards
+		Pair<?, ?> p3 = new Pair<>(93789.82, 'C');//pair type 3 of type double and char being passed as a wildcard
+		Pair<?, ?> p4 = new Pair<>(true, 597869875L);//pair type 4 type boolean and Long being passed as a wildcard
+		
+		//p1. 
+		System.out.println("p1:");
+		System.out.println(p1.getF());
+		System.out.println(p1.getS());
+		System.out.println();
+		
+		//p2.
+		System.out.println("p2:");
+		System.out.println(p2.getF());
+		System.out.println(p2.getS());
+		System.out.println();
+		
+		//explanation of the last two
+		System.out.printf("Here are a couple additional ones demonstrating how any value"
+				+ "%ncan be passed into these generic classes using wildcards.%n");
+		System.out.println();
+		
+		//p3.
+		System.out.println("p3: <?, ?> ");
+		System.out.println(p3.getF());
+		System.out.println(p3.getS());
+		System.out.println();
+		
+		//p4.
+		System.out.println("p4: <?, ?> ");
+		System.out.println(p4.getF());
+		System.out.println(p4.getS());
+		System.out.println();
+		
+	}
+}
