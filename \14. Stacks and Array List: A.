@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 
-//David Persson
-//CSIS 312-<B02>
-//<Assignment8> 
-//Modified from Fig. 20.7: Stack.java from the textbook, pg. 842.
 public class Stack<T> 
 {
 	public final ArrayList<T> elements; //ArrayList stores stack elements
